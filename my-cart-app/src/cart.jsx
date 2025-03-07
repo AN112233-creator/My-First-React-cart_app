@@ -299,8 +299,7 @@ function Cart() {
                   return total;
                 }, 0)) / 100).toFixed(2) 
               } 
-              
-              
+          
               </div>
           </div>
 
@@ -326,12 +325,12 @@ function Cart() {
 
             ${
             formatCurrency ( (cart.reduce((total, item) => total + item.priceCents * item.quantity, 0)  +
-                cart.reduce((total, item) => {
-                  if (deliveryOptions[item.id] === "free") return total + 0;
-                  if (deliveryOptions[item.id] === "standard") return total + 499;
-                  if (deliveryOptions[item.id] === "express") return total + 999;
-                  return total;
-                }, 0)) 
+                        cart.reduce((total, item) => {
+                          if (deliveryOptions[item.id] === "free") return total + 0;
+                          if (deliveryOptions[item.id] === "standard") return total + 499;
+                          if (deliveryOptions[item.id] === "express") return total + 999;
+                          return total;
+                        }, 0)) 
              
              + 
              
