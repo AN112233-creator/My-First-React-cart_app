@@ -128,7 +128,7 @@ function Cart() {
                   <div className="checkout-header-left-section">
                     <Link to="/">
                       <img className="amazon-logo" src={amazonBlack} />
-                      <img className="amazon-mobile-logo" src={amazonmobilelogo} />
+                      <img className="amazon-mobile-logo" src={amazonBlack} />
                     </Link>
                   </div>
 
