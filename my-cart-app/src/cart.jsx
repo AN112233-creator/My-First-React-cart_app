@@ -8,6 +8,7 @@ import carticon from "./assets/images/icons/cart-icon.png";
 import searchicon from "./assets/images/icons/search-icon.png";
 import amazonlogo from "./assets/images/amazon-logo-white.png";
 import amazonBlack from "./assets/images/amazon-logo.png";
+import amazonMobileBlack from "./assets/images/amazon-mobile-logo.png"
 import amazonmobilelogo from "./assets/images/amazon-mobile-logo-white.png";
 import checkmark from "./assets/images/icons/checkmark.png";
 import  socks from "./assets/images/products/athletic-cotton-socks-6-pairs.jpg";
@@ -128,7 +129,7 @@ function Cart() {
                   <div className="checkout-header-left-section">
                     <Link to="/">
                       <img className="amazon-logo" src={amazonBlack} />
-                      <img className="amazon-mobile-logo" src={amazonBlack} />
+                      <img className="amazon-mobile-logo" src={amazonMobileBlack} />
                     </Link>
                   </div>
 
