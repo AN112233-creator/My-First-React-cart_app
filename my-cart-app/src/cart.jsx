@@ -22,7 +22,10 @@ import bakeware from "./assets/images/products/6-piece-non-stick-baking-set.webp
 import checkoutLockIcon from "./assets/images/icons/checkout-lock-icon.png";
 import { CartContext } from './CartContext';
 import Product from './products';
-import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+
+// import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+import dayjs from "dayjs";
 
     
 /* const deliveryOptionsForDate = [{
@@ -61,6 +64,10 @@ function Cart() {
           defaultDeliveryOptions[cartItem.id] = "free"; // Default to "FREE Shipping"
         });
         setDeliveryOptions(defaultDeliveryOptions);
+        
+
+        const year = dayjs();
+        console.log(year)
 
 
       }, [cart]);
@@ -156,7 +163,6 @@ function Cart() {
                   
                     <div key={cartItem.id} className="cart-item-container">
                     <div className="delivery-date">
-                    {/*   Delivery date: Tuesday, June 21 */}
                     Delivery date: {deliveryOptions[cartItem.id] === "free" ? deliveryOptionOne() : 
                                           deliveryOptions[cartItem.id] === "standard" ? deliveryOptionTwo() : 
                                           deliveryOptionThree()}

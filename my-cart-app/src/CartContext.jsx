@@ -53,10 +53,7 @@ export const CartProvider = ({ children }) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== cartItemId));
   };
 
- function addClassForTimeout (){
-    
-
-  } 
+ 
 
  
 
