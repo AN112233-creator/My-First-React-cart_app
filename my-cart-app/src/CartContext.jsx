@@ -47,6 +47,8 @@ export const CartProvider = ({ children }) => {
             return [...prevCart, { ...product, quantity: selectedQuantity }];
     }
 });
+
+
 };
 
   const removeFromCart= (cartItemId) => {
@@ -59,7 +61,7 @@ export const CartProvider = ({ children }) => {
 
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, formatCurrency }}>
+    <CartContext.Provider value={{ cart,setCart, addToCart, removeFromCart, formatCurrency }}>
       {children}
     </CartContext.Provider>
   );

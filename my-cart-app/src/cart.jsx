@@ -49,9 +49,30 @@ import dayjs from "dayjs";
 
 function Cart() {
 
-  const {cart, removeFromCart, formatCurrency} = useContext(CartContext)
+  const {cart,setCart, removeFromCart, formatCurrency} = useContext(CartContext)
   const [cartNumber , setCartNumber] = useState(0);
   const [deliveryOptions, setDeliveryOptions] = useState({});
+
+   useEffect(() => {
+    const savedCarts = JSON.parse(localStorage.getItem('carts'));
+  
+    if (savedCarts){
+       setCart(savedCarts) 
+    }
+  }, []);  
+
+  /* const savedCarts = JSON.parse(localStorage.getItem('carts'));
+  if (savedCarts){
+     setCart(savedCarts) 
+    console.log("isSaving")
+  } */
+
+  // Save cart to local storage whenever it changes
+  useEffect(() => {
+   if (cart.length > 0 ) {
+    localStorage.setItem('carts', JSON.stringify(cart))
+   }
+  }, [cart])
 
  
   
@@ -66,9 +87,7 @@ function Cart() {
         setDeliveryOptions(defaultDeliveryOptions);
         
 
-        const year = dayjs();
-        console.log(year)
-
+      
 
       }, [cart]);
 
@@ -120,6 +139,7 @@ function Cart() {
     productPriceCents += cartItem.priceCents * cartItem.quantity
   })
 
+ 
 
   
 

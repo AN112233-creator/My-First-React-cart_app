@@ -141,6 +141,25 @@ function Product (){
   const [selectedQuantity, setSelectedQuantity] = useState({});
   const [isClickedAdd, setIsClickedAdd]  = useState({});
 
+  /*  useEffect(() => {
+      const savedCarts = JSON.parse(localStorage.getItem('carts'));
+    
+      if (savedCarts){
+         setCart(savedCarts) 
+        console.log("isSaving")
+      }
+      else {
+        "is not saving"
+      }
+    }) */
+   
+    useEffect(() => {
+     if (cart.length > 0 ) {
+      localStorage.setItem('carts', JSON.stringify(cart))
+      console.log("hello")
+     }
+    }, [cart])
+
 
   function handleQuantityChange(productId, quantity) {
     setSelectedQuantity((prevQuantities) => ({
